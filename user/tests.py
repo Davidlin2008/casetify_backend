@@ -1,13 +1,16 @@
+import jwt
 import json
 import bcrypt
 
 
 from django.test    import TestCase
-from django.test    import Client 
+from django.test    import Client
 from datetime       import datetime
 from unittest.mock  import patch, MagicMock
 
+from casetify_backend.settings import SECRET_KEY
 from .models        import User
+from .utils         import login_decorator
 
 class UserTest(TestCase):
     def setUp(self): 
@@ -16,7 +19,7 @@ class UserTest(TestCase):
         User.objects.create(
             email='testpy@gmail.com',
             password= hashed_password.decode('UTF-8'),
-            phone_number='01012345678'
+            mobile_number='01099887766'
         )
 
     def tearDown(self):
@@ -24,50 +27,169 @@ class UserTest(TestCase):
 
 # SignUp test
     def test_user_signup_check(self):
-        test        = {'email': 'testpy01@gmail.com', 'password':'12345678', 'phone_number':'01011223344'}
+        test        = {'email': 'testpy11@gmail.com', 'password':'12345678', 'mobile_number':'01011223344'}
         response    = Client().post('/user/signup', json.dumps(test), content_type='applications/json')
         self.assertEqual(response.status_code, 200)
     
     def test_user_signup_email_check(self):
-        test        = {'email':'testpy@gmail.com', 'password':'12345678', 'phone_number':'01044332211'}
+        test        = {'email': 'testpy@gmail.com', 'password':'12345678', 'mobile_number':'01091223344'}
         response    = Client().post('/user/signup', json.dumps(test), content_type='applications/json')
         self.assertEqual(response.status_code, 401)
         self.assertEqual(response.json(), {'message':'DUPLICATE_EMAIL'})
     
     def test_user_signup_password_check(self):
-        test        = {'email':'test02@gmail.com', 'password':'123456', 'phone_number':'01055443322'}
+        test        = {'email':'testpy03@gmail.com', 'password':'123456', 'mobile_number':'01055443322'}
         response    = Client().post('/user/signup', json.dumps(test), content_type='applications/json')
         self.assertEqual(response.status_code, 400)
         self.assertEqual(response.json(), {'message':'INVALID_PASSWORD'})
     
     def test_user_signup_except_check(self):
-        test        = {'name':'test03@gmail.com', 'password':'12345678', 'phone_number':'01066557744'}
+        test        = {'name':'testpy04@gmail.com', 'password':'12345678', 'mobile_number':'01066557744'}
         response    = Client().post('/user/signup', json.dumps(test), content_type='applications/json')
         self.assertEqual(response.status_code, 400)
         self.assertEqual(response.json(), {'message':'INVALID_KEYS'})
 
 # SignIn test
     def test_user_signin_check(self):
-        test        = {'email':'testpy@gmail.com', 'password':'12345678'}
-        response    = Client().post('/user/signin', json.dumps(test), content_type='applications/json')
-        access_token = response.json()['access_token']
+        test            = {'email':'testpy@gmail.com', 'password':'12345678'}
+        response        = Client().post('/user/signin', json.dumps(test), content_type='applications/json')
+        access_token    = response.json()['access_token']
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json(),{"access_token" : access_token})
 
     def test_user_signin_email_check(self):
-        test        = {'email':'test99@gmail.com', 'password':'12345678'}
-        response    = Client().post('/user/signin', json.dumps(test), content_type='applications/json')
+        test            = {'email':'test99@gmail.com', 'password':'12345678'}
+        response        = Client().post('/user/signin', json.dumps(test), content_type='applications/json')
         self.assertEqual(response.status_code, 400)
         self.assertEqual(response.json(), {'message':'INVALID_USER'})
 
     def test_user_signin_password_check(self):
-        test        = {'email':'testpy@gmail.com', 'password':'87654321'}
-        response    = Client().post('/user/signin', json.dumps(test), content_type='applications/json')
+        test            = {'email':'testpy@gmail.com', 'password':'87654321'}
+        response        = Client().post('/user/signin', json.dumps(test), content_type='applications/json') 
         self.assertEqual(response.status_code, 401)
         self.assertEqual(response.json(), {'message':'INVALID_PASSWORD'})
 
     def test_user_signin_except_check(self):
-        test        = {'Email':'testpy@gmail.com', 'password':'87654321'}
-        response    = Client().post('/user/signin', json.dumps(test), content_type='applications/json')
+        test            = {'Email':'testpy@gmail.com', 'password':'87654321'}
+        response        = Client().post('/user/signin', json.dumps(test), content_type='applications/json')
         self.assertEqual(response.status_code, 400)
         self.assertEqual(response.json(), {'message':'INVALID_KEYS'})
+
+# Myprofile test
+class MyprofileTest(TestCase):
+    def setUp(self):
+
+        hashed_password = bcrypt.hashpw(('12345678').encode('utf-8'),bcrypt.gensalt())              
+        User.objects.create(
+            id                  = '99',
+            email               ='profiletest@gmail.com',
+            password            = hashed_password.decode('UTF-8'),
+            nick_name           = "test",
+            introduction        = "hello my name is test",
+            website             = "http://test.com",
+            location            = "Republic of Korea",
+            twitter             = "@test",
+            image               = "test.jpg",
+            mobile_number       = "01022334455",
+            first_name          = "test",
+            last_name           = "pang",
+            address             = "seoul"
+        )
+
+    def tearDown(self):
+        User.objects.filter(email='profiletest@gmail.com').delete()
+
+    def testToken(self):
+        test            = {'email':'profiletest@gmail.com', 'password':'12345678'}
+        response        = Client().post('/user/signin', json.dumps(test), content_type='applications/json')
+        access_token    = response.json()['access_token']
+        return access_token
+
+    invalid_token = 'egJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTl9.LZJTUoOJr__JN8VvWGE57mQtmWoJwBdMB1-SKGSJHMc'
+
+# get myprofile
+    def test_get_myprofile_success(self):
+        test_token = self.testToken()
+        response = Client().get("/user/myprofile", **{"HTTP_AUTHORIZATION":test_token,"content_type" : "application/json"})
+        self.assertEqual(response.status_code, 200)
+
+    def test_get_myprofie_fail(self):
+        response = Client().get("/user/myprofile", **{"HTTP_AUTHORIZATION":self.invalid_token,"content_type" : "application/json"})
+        self.assertEqual(response.status_code, 401,{'message' : 'INVALID_TOKEN'})
+
+# post MyprofileEdit
+    def test_post_myprofile_edit(self):
+        test_token = self.testToken()
+        test = {
+            'Name'      : 'edit_test',
+            'Mail'      : 'edit_test@gmail.com',
+            'Bio'       : 'edit_test',
+            'Website'   : 'http://edit.com',
+            'Location'  : 'South Korea',
+            'Twitter'   : '@edit_test',
+            'Images'    : 'edit_test.png'
+        }
+        response        = Client().post('/user/myprofile-edit', json.dumps(test), **{"HTTP_AUTHORIZATION":test_token,"content_type" : "application/json"})
+        self.assertEqual(response.status_code, 200)
+
+    def test_post_myprofile_edit_fail(self):
+        test_token = self.testToken()
+        test = {
+            'mobile_number'  : '01032429999',
+            'mail'      : 'edit_test@gmail.com',
+            'bio'       : 'edit_test',
+            'website'   : 'http://edit.com',
+            'location'  : 'South Korea',
+            'twitter'   : '@edit_test',
+            'images'    : 'edit_test.png'
+        }
+        response        = Client().post('/user/myprofile-edit', json.dumps(test), **{"HTTP_AUTHORIZATION":test_token,"content_type" : "application/json"})
+        self.assertEqual(response.status_code, 400, {'message':'INVALID_USER'})
+
+    def test_post_myprofile_edit_except(self):
+        test_token = self.testToken()
+        test = {
+            'nickname'  : 'edit_test',
+            'mail'      : 'edit_test@gmail.com',
+            'bio'       : 'edit_test',
+            'website'   : 'http://edit.com',
+            'location'  : 'South Korea',
+            'twitter'   : '@edit_test',
+            'images'    : 'edit_test.png'
+        }
+        response        = Client().post('/user/myprofile-edit', json.dumps(test), **{"HTTP_AUTHORIZATION":test_token,"content_type" : "application/json"})
+        self.assertEqual(response.status_code, 400, {'message':'INVALID_KEYS'})
+
+# post MyShippingAddressEdit
+    def test_post_myshippingaddress_edit(self):
+        test_token = self.testToken()
+        test = {
+            'Firstname' : 'first_test',
+            'Lastname'  : 'laset_test',
+            'Address'   : 'address_test',
+            'Zipcode'   : '05999'
+        }
+        response        = Client().post('/user/myshippingaddress-edit', json.dumps(test), **{"HTTP_AUTHORIZATION":test_token,"content_type" : "application/json"})
+        self.assertEqual(response.status_code, 200)
+
+    def test_post_myshippingaddress_edit_fail(self):
+        test_token = self.testToken()
+        test = {
+            'phone_number'  : '01032429999',
+            'Firstname' : 'first_test',
+            'Lastname'  : 'laset_test',
+            'Address'   : 'address_test'
+        }
+        response        = Client().post('/user/myshippingaddress-edit', json.dumps(test), **{"HTTP_AUTHORIZATION":test_token,"content_type" : "application/json"})
+        self.assertEqual(response.status_code, 400, {'message':'INVALID_USER'})
+
+    def test_post_myshippingaddress_edit_except(self):
+        test_token = self.testToken()
+        test = {
+            'Fulltname' : 'first_test',
+            'Last_name'  : 'laset_test',
+            'Address'   : 'address_test',
+            'Zip_code'   : '05999'
+        }
+        response        = Client().post('/user/myshippingaddress-edit', json.dumps(test), **{"HTTP_AUTHORIZATION":test_token,"content_type" : "application/json"})
+        self.assertEqual(response.status_code, 400, {'message':'INVALID_KEYS'})
