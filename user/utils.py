@@ -1,7 +1,5 @@
 import jwt
 import json
-import requests
-
 
 from django.http                        import JsonResponse
 from django.core.exceptions             import ObjectDoesNotExist
