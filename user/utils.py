@@ -1,6 +1,6 @@
 import jwt
 import json
-import requests
+#import requests
 
 
 from django.http                        import JsonResponse
