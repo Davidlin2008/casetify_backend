@@ -18,7 +18,7 @@ class UserTest(TestCase):
         hashed_password = bcrypt.hashpw(('12345678').encode('utf-8'),bcrypt.gensalt())              
         User.objects.create(
             email='testpy@gmail.com',
-            password= hashed_password.decode('UTF-8'),
+            password= hashed_password,
             mobile_number='01099887766'
         )
 
@@ -81,10 +81,10 @@ class MyprofileTest(TestCase):
 
         hashed_password = bcrypt.hashpw(('12345678').encode('utf-8'),bcrypt.gensalt())              
         User.objects.create(
-            id                  = '99',
+            id                  = '1',
             email               ='profiletest@gmail.com',
-            password            = hashed_password.decode('UTF-8'),
-            nick_name           = "test",
+            password            = hashed_password,
+            name                = "test",
             introduction        = "hello my name is test",
             website             = "http://test.com",
             location            = "Republic of Korea",
@@ -93,7 +93,8 @@ class MyprofileTest(TestCase):
             mobile_number       = "01022334455",
             first_name          = "test",
             last_name           = "pang",
-            address             = "seoul"
+            address             = "seoul",
+            zipcode             = "05999"
         )
 
     def tearDown(self):
@@ -121,13 +122,13 @@ class MyprofileTest(TestCase):
     def test_post_myprofile_edit(self):
         test_token = self.testToken()
         test = {
-            'Name'      : 'edit_test',
-            'Mail'      : 'edit_test@gmail.com',
-            'Bio'       : 'edit_test',
-            'Website'   : 'http://edit.com',
-            'Location'  : 'South Korea',
-            'Twitter'   : '@edit_test',
-            'Images'    : 'edit_test.png'
+            'name'      : 'edit_test',
+            'email'     : 'edit_test@gmail.com',
+            'bio'       : 'edit_test',
+            'website'   : 'http://edit.com',
+            'location'  : 'South Korea',
+            'twitter'   : '@edit_test',
+            'images'    : 'edit_test.png'
         }
         response        = Client().post('/user/myprofile-edit', json.dumps(test), **{"HTTP_AUTHORIZATION":test_token,"content_type" : "application/json"})
         self.assertEqual(response.status_code, 200)
@@ -136,12 +137,12 @@ class MyprofileTest(TestCase):
         test_token = self.testToken()
         test = {
             'mobile_number'  : '01032429999',
-            'mail'      : 'edit_test@gmail.com',
-            'bio'       : 'edit_test',
-            'website'   : 'http://edit.com',
-            'location'  : 'South Korea',
-            'twitter'   : '@edit_test',
-            'images'    : 'edit_test.png'
+            'mail'           : 'edit_test@gmail.com',
+            'bio'            : 'edit_test',
+            'website'        : 'http://edit.com',
+            'location'       : 'South Korea',
+            'twitter'        : '@edit_test',
+            'images'         : 'edit_test.png'
         }
         response        = Client().post('/user/myprofile-edit', json.dumps(test), **{"HTTP_AUTHORIZATION":test_token,"content_type" : "application/json"})
         self.assertEqual(response.status_code, 400, {'message':'INVALID_USER'})
@@ -149,8 +150,8 @@ class MyprofileTest(TestCase):
     def test_post_myprofile_edit_except(self):
         test_token = self.testToken()
         test = {
-            'nickname'  : 'edit_test',
-            'mail'      : 'edit_test@gmail.com',
+            'fullname'  : 'edit_test',
+            'email'     : 'edit_test@gmail.com',
             'bio'       : 'edit_test',
             'website'   : 'http://edit.com',
             'location'  : 'South Korea',
@@ -164,10 +165,11 @@ class MyprofileTest(TestCase):
     def test_post_myshippingaddress_edit(self):
         test_token = self.testToken()
         test = {
-            'Firstname' : 'first_test',
-            'Lastname'  : 'laset_test',
-            'Address'   : 'address_test',
-            'Zipcode'   : '05999'
+            'first_name'    : 'first_test',
+            'last_name'     : 'laset_test',
+            'address'       : 'address_test',
+            'zipcode'       : '05999',
+            'mobile_number' : "01022334422"
         }
         response        = Client().post('/user/myshippingaddress-edit', json.dumps(test), **{"HTTP_AUTHORIZATION":test_token,"content_type" : "application/json"})
         self.assertEqual(response.status_code, 200)
@@ -175,10 +177,10 @@ class MyprofileTest(TestCase):
     def test_post_myshippingaddress_edit_fail(self):
         test_token = self.testToken()
         test = {
-            'phone_number'  : '01032429999',
-            'Firstname' : 'first_test',
-            'Lastname'  : 'laset_test',
-            'Address'   : 'address_test'
+            'mobile_number'  : '01032429999',
+            'first_name'     : 'first_test',
+            'last_name'      : 'laset_test',
+            'address'        : 'address_test'
         }
         response        = Client().post('/user/myshippingaddress-edit', json.dumps(test), **{"HTTP_AUTHORIZATION":test_token,"content_type" : "application/json"})
         self.assertEqual(response.status_code, 400, {'message':'INVALID_USER'})
@@ -187,9 +189,9 @@ class MyprofileTest(TestCase):
         test_token = self.testToken()
         test = {
             'Fulltname' : 'first_test',
-            'Last_name'  : 'laset_test',
-            'Address'   : 'address_test',
-            'Zip_code'   : '05999'
+            'last_name'  : 'laset_test',
+            'address'   : 'address_test',
+            'zip_code'   : '05999'
         }
         response        = Client().post('/user/myshippingaddress-edit', json.dumps(test), **{"HTTP_AUTHORIZATION":test_token,"content_type" : "application/json"})
         self.assertEqual(response.status_code, 400, {'message':'INVALID_KEYS'})

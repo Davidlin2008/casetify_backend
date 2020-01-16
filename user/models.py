@@ -4,7 +4,7 @@ class User(models.Model):
     email           = models.CharField(max_length=200, unique=True)
     password        = models.CharField(max_length=200)
     mobile_number   = models.CharField(max_length=11, unique=True)
-    nick_name       = models.CharField(max_length=100)
+    name            = models.CharField(max_length=100)
     introduction    = models.CharField(max_length=500, null=True)
     website         = models.URLField(max_length=2500, null=True)
     location        = models.CharField(max_length=500, null=True)
