@@ -3,46 +3,47 @@ from django.db import models
 from user.models import User
 
 class Item(models.Model):
-    item_name = models.CharField(max_length = 500)
+    name = models.CharField(max_length = 500)
 
     class Meta:
         db_table = 'items'
 
 class Artist(models.Model):
-    artist_name        = models.CharField(max_length = 500)
-    artist_description = models.CharField(max_length = 500, null = True)
+    name        = models.CharField(max_length = 500)
+    description = models.CharField(max_length = 500, null = True)
 
     class Meta:
-        db_table = 'artist'
+        db_table = 'artists'
 
 class DeviceBrand(models.Model):
-    device_brand_name = models.CharField(max_length = 500)
+    name = models.CharField(max_length = 500)
 
     class Meta:
         db_table = 'device_brands'
 
 class Device(models.Model):
-    device_name  = models.CharField(max_length = 500)
-    device_brand = models.ForeignKey(DeviceBrand, on_delete = models.SET_NULL, null = True)
+    name          = models.CharField(max_length = 500)
+    device_brand  = models.ForeignKey(DeviceBrand, on_delete = models.SET_NULL, null = True)
+    overlay_image = models.URLField(max_length = 2500) 
 
     class Meta:
         db_table = 'devices'
 
 class DeviceColor(models.Model):
-    device            = models.ForeignKey(Device, on_delete = models.SET_NULL, null = True)
-    device_color_name = models.CharField(max_length = 500)
+    name   = models.CharField(max_length = 500)
+    device = models.ForeignKey(Device, on_delete = models.SET_NULL, null = True)
 
     class Meta:
         db_table = 'device_colors'
 
 class ArtworkType(models.Model):
-    artwork_type_name = models.CharField(max_length = 2500, null = True)
+    name = models.CharField(max_length = 2500, null = True)
 
     class Meta:
         db_table = 'artwork_types'
 
 class Artwork(models.Model):
-    artwork_name  = models.CharField(max_length = 500)
+    name          = models.CharField(max_length = 500)
     item          = models.ForeignKey(Item, on_delete = models.SET_NULL, null = True)
     device        = models.ForeignKey(Device, on_delete = models.SET_NULL, null = True)
     artwork_type  = models.ForeignKey(ArtworkType, on_delete = models.SET_NULL, null = True)
@@ -59,11 +60,11 @@ class Artwork(models.Model):
         db_table = 'artworks'
 
 class ArtworkColor(models.Model):
-    artwork_color_name = models.CharField(max_length = 500)
-    artwork_color_info = models.CharField(max_length = 2500, null = True) 
+    name = models.CharField(max_length = 500)
+    info = models.CharField(max_length = 2500, null = True) 
 
     class Meta:
-        db_table = 'arwork_colors'
+        db_table = 'artwork_colors'
 
 class ArtworkColorArtwork(models.Model):
     artwork       = models.ForeignKey(Artwork, on_delete = models.SET_NULL, null = True)
@@ -89,7 +90,7 @@ class CustomArtworkImage(models.Model):
     image_3       = models.URLField(max_length = 2500, null=True)
     image_4       = models.URLField(max_length = 2500, null=True)
     image_5       = models.URLField(max_length = 2500, null=True)
-
+    
     class Meta:
         db_table = 'custom_artwork_images'
 
