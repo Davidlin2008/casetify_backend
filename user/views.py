@@ -41,7 +41,7 @@ class SignUpView(View):
             hashed_password = bcrypt.hashpw(data['password'].encode('utf-8'),bcrypt.gensalt())              
             User(
                 email           = data['email'],
-                password        = hashed_password.decode('utf-8'),
+                password        = hashed_password,
                 mobile_number    = data['mobile_number']
             ).save()
             return HttpResponse(status=200)
@@ -77,18 +77,18 @@ class MyprofileView(View):
         try:
             user = User.objects.get(id=request.user.id)
             result = {
-                "Name"          : user.nick_name,
-                "Mail"          : user.email,
-                "Bio"           : user.introduction,
-                "Website"       : user.website,
-                "Location"      : user.location,
-                "Twitter"       : user.twitter,
-                "Images"        : user.image,
-                "Phone_number"  : user.mobile_number,
-                "Firstname"     : user.first_name,
-                "Lastname"      : user.last_name,
-                "Address"       : user.address,
-                "Zipcode"      : user.zipcode
+                "name"          : user.name,
+                "email"         : user.email,
+                "bio"           : user.introduction,
+                "website"       : user.website,
+                "location"      : user.location,
+                "twitter"       : user.twitter,
+                "images"        : user.image,
+                "mobile_number" : user.mobile_number,
+                "first_name"    : user.first_name,
+                "last_name"     : user.last_name,
+                "address"       : user.address,
+                "zipcode"       : user.zipcode
             }
 
             return JsonResponse(result, status=200)
@@ -105,13 +105,13 @@ class MyprofileEditView(View):
 
         try:    
             user = User.objects.get(id=request.user.id)
-            user.nick_name       = data['Name']
-            user.email           = data['Mail']
-            user.introduction    = data['Bio']
-            user.website         = data['Website']
-            user.location        = data['Location']
-            user.twitter         = data['Twitter']
-            user.image           = data['Images']
+            user.name            = data['name']
+            user.email           = data['email']
+            user.introduction    = data['bio']
+            user.website         = data['website']
+            user.location        = data['location']
+            user.twitter         = data['twitter']
+            user.image           = data['images']
             user.save()
 
             return HttpResponse(status=200)
@@ -129,10 +129,11 @@ class MyShippingAddressEditView(View):
         try:
             user = User.objects.get(id=request.user.id)
 
-            user.first_name  = data['Firstname']
-            user.last_name   = data['Lastname']
-            user.address     = data['Address']
-            user.zipcode     = data['Zipcode']
+            user.first_name     = data['first_name']
+            user.last_name      = data['last_name']
+            user.address        = data['address']
+            user.zipcode        = data['zipcode']
+            user.mobile_number  = data['mobile_number']
             user.save()
             
             return HttpResponse(status=200)
