@@ -13,10 +13,12 @@ class Order(models.Model):
     order_status    = models.ForeignKey('OrderStatus', on_delete=models.SET_NULL, null=True)
     created_at      = models.DateTimeField(auto_now_add = True)
     updated_at      = models.DateTimeField(auto_now = True)
+    
     class Meta:
-        db_table : 'orders'
+        db_table = 'orders'
     
 class OrderStatus(models.Model):
     name = models.CharField(max_length=100)
+    
     class Meta:
-        db_table : 'orderstatus'
+        db_table = 'orderstatus'

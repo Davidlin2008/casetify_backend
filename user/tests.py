@@ -9,6 +9,7 @@ from datetime       import datetime
 from unittest.mock  import patch, MagicMock
 
 from casetify_backend.settings import SECRET_KEY
+
 from .models        import User
 from .utils         import login_decorator
 
