@@ -1,0 +1,172 @@
+artwork_name,item_id,device_id,artwork_type_id,artist_id,is_customed,custom_option,introduction
+Monogram Studio,1,1,1,1,True,,"<div id=""product-detail"" class=""cms-page-container bootstrap""><style>
+    
+    section[data-block-index=""0""] {
+      background-color: transparent;
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+    @media (max-width: 767px) {
+      section[data-block-index=""0""] {
+        padding-top: 0px;
+        padding-bottom: 0px;
+      }
+    }
+    </style><section class=""cms-slider-block"" data-block-index=""0"" data-block-name=""SLIDER_BLOCK_1ANYA74""><div class=""slider-container aspect-16-9""><div class=""slider aspect-16-9 banner""><div class=""slick-initialized slick-slider slick-dotted""><div class=""slick-list draggable""><div class=""slick-track"" style=""opacity: 1; width: 0px; transform: translate3d(0px, 0px, 0px);""><div class=""slick-slide slick-cloned"" data-slick-index=""-1"" aria-hidden=""true"" style=""width: 0px;"" tabindex=""-1""><div><a href=""#"" style=""width: 100%; display: inline-block;"" tabindex=""-1""><div class=""slide-background hidden-xs aspect-16-9"" style=""background-image: url(&quot;https://cdn-stamplib.casetify.com/cms/image/fa75299097434e7a051e31f455641fd9.jpg&quot;);""><div class=""container slider-content-container theme-dark""><div class=""col-xs-12 col-sm-8 col-sm-offset-2 text-center theme-dark""><!----><!----><!----></div></div></div><div class=""slide-background visible-xs aspect-16-9"" style=""background-image: url(&quot;data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7&quot;);""></div></a></div></div><div class=""slick-slide slick-current slick-active"" data-slick-index=""0"" aria-hidden=""false"" style=""width: 0px;"" role=""tabpanel"" id=""slick-slide00""><div><a href=""#"" style=""width: 100%; display: inline-block;"" tabindex=""0""><div class=""slide-background hidden-xs aspect-16-9"" style=""background-image: url(&quot;https://cdn-stamplib.casetify.com/cms/image/97c0fc1adb219e73aa911bb4f6f6676e.jpg&quot;);""><div class=""container slider-content-container theme-dark""><div class=""col-xs-12 col-sm-8 col-sm-offset-2 text-center theme-dark""><!----><!----><!----></div></div></div><div class=""slide-background visible-xs aspect-16-9"" style=""background-image: url(&quot;data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7&quot;);""></div></a></div></div><div class=""slick-slide"" data-slick-index=""1"" aria-hidden=""true"" style=""width: 0px;"" tabindex=""-1"" role=""tabpanel"" id=""slick-slide01""><div><a href=""#"" style=""width: 100%; display: inline-block;"" tabindex=""-1""><div class=""slide-background hidden-xs aspect-16-9"" style=""background-image: url(&quot;https://cdn-stamplib.casetify.com/cms/image/fa75299097434e7a051e31f455641fd9.jpg&quot;);""><div class=""container slider-content-container theme-dark""><div class=""col-xs-12 col-sm-8 col-sm-offset-2 text-center theme-dark""><!----><!----><!----></div></div></div><div class=""slide-background visible-xs aspect-16-9"" style=""background-image: url(&quot;data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7&quot;);""></div></a></div></div><div class=""slick-slide slick-cloned"" data-slick-index=""2"" aria-hidden=""true"" style=""width: 0px;"" tabindex=""-1""><div><a href=""#"" style=""width: 100%; display: inline-block;"" tabindex=""-1""><div class=""slide-background hidden-xs aspect-16-9"" style=""background-image: url(&quot;https://cdn-stamplib.casetify.com/cms/image/97c0fc1adb219e73aa911bb4f6f6676e.jpg&quot;);""><div class=""container slider-content-container theme-dark""><div class=""col-xs-12 col-sm-8 col-sm-offset-2 text-center theme-dark""><!----><!----><!----></div></div></div><div class=""slide-background visible-xs aspect-16-9"" style=""background-image: url(&quot;data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7&quot;);""></div></a></div></div><div class=""slick-slide slick-cloned"" data-slick-index=""3"" aria-hidden=""true"" style=""width: 0px;"" tabindex=""-1""><div><a href=""#"" style=""width: 100%; display: inline-block;"" tabindex=""-1""><div class=""slide-background hidden-xs aspect-16-9"" style=""background-image: url(&quot;https://cdn-stamplib.casetify.com/cms/image/fa75299097434e7a051e31f455641fd9.jpg&quot;);""><div class=""container slider-content-container theme-dark""><div class=""col-xs-12 col-sm-8 col-sm-offset-2 text-center theme-dark""><!----><!----><!----></div></div></div><div class=""slide-background visible-xs aspect-16-9"" style=""background-image: url(&quot;data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7&quot;);""></div></a></div></div></div></div><ul class=""slick-dots"" style=""display: table;"" role=""tablist""><li class=""slick-active"" role=""presentation""><button type=""button"" role=""tab"" id=""slick-slide-control00"" aria-controls=""slick-slide00"" aria-label=""1 of 2"" tabindex=""0"" aria-selected=""true"">1</button></li><li role=""presentation""><button type=""button"" role=""tab"" id=""slick-slide-control01"" aria-controls=""slick-slide01"" aria-label=""2 of 2"" tabindex=""-1"">2</button></li></ul></div></div></div></section><style>
+    
+    section[data-block-index=""1""] {
+      background-color: transparent;
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+    @media (max-width: 767px) {
+      section[data-block-index=""1""] {
+        padding-top: 0px;
+        padding-bottom: 0px;
+      }
+    }
+    </style><section class=""cms-video-block"" data-block-index=""1"" data-block-name=""VIDEO_BLOCK_L3X4O1""><video class=""visible-xs"" width=""100%"" src=""https://cdn-stamplib.casetify.com/cms/video/2915f9b507cd5bae131d5dc172ea7fb2.mp4"" playsinline=""playsinline"" muted=""muted"" loop=""loop"" controls=""controls"" data-auto-play=""data-auto-play"" controlslist=""nodownload""></video><div class=""video-background relative hidden-xs aspect-16-9""></div></section><style>section[data-block-index=""2""]{background-color:transparent;padding-top:0;padding-bottom:0}@media (max-width:767px){section[data-block-index=""2""]{padding-top:0;padding-bottom:0}}</style><section class=""cms-gutter-block"" data-block-index=""2"" data-block-name=""GUTTER_BLOCK_196VR8""><div class=""hidden-xs"" style=""height: 60px; background-color: transparent;""></div><div class=""visible-xs"" style=""height: 30px; background-color: transparent;""></div></section><style>
+    
+    section[data-block-index=""3""] {
+      background-color: transparent;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    @media (max-width: 767px) {
+      section[data-block-index=""3""] {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+    }
+    </style><section class=""cms-header-block"" data-block-index=""3"" data-block-name=""HEADER_BLOCK_W5ZRYJ""><div class=""container""><div class=""col-sm-8 col-sm-offset-2 padding-left-sm-0 padding-right-sm-0 padding-left-xs-0 padding-right-xs-0""><h1 class=""text-center hidden-xs""></h1><h2 class=""visible-xs text-xs-center""></h2><h2 class=""text-center text-xs-center "">Up Close and Personal</h2></div></div></section><style>
+    
+    section[data-block-index=""4""] {
+      background-color: transparent;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    @media (max-width: 767px) {
+      section[data-block-index=""4""] {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+    }
+    </style><section class=""cms-paragraph-block"" data-block-index=""4"" data-block-name=""PARAGRAPH_BLOCK_132BQEA""><div class=""container""><div class=""padding-left-xs-0 padding-right-xs-0 col-sm-8 col-sm-offset-2 col-xs-12""><p class=""padding-left-xs-0 padding-right-xs-0 text-center text-xs-center"">Step into the Monogram Studio and give your tech accessory the custom treatment it deserves. CASETiFY's huge selection of fonts, colorways and bold layouts will have you wearing your heart on your sleeve &amp; your personality on your vegan leather phone case. </p></div></div></section><style>section[data-block-index=""5""]{background-color:transparent;padding-top:0;padding-bottom:0}@media (max-width:767px){section[data-block-index=""5""]{padding-top:0;padding-bottom:0}}</style><section class=""cms-gutter-block"" data-block-index=""5"" data-block-name=""GUTTER_BLOCK_TFLWC0""><div class=""hidden-xs"" style=""height: 60px; background-color: transparent;""></div><div class=""visible-xs"" style=""height: 30px; background-color: transparent;""></div></section><style>
+    
+    section[data-block-index=""6""] {
+      background-color: transparent;
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+    @media (max-width: 767px) {
+      section[data-block-index=""6""] {
+        padding-top: 0px;
+        padding-bottom: 0px;
+      }
+    }
+    </style><section class=""cms-image-block"" data-block-index=""6"" data-block-name=""IMAGE_BLOCK_1MWLH3Q""><img class=""visible-xs"" src=""https://cdn-stamplib.casetify.com/cms/image/7daa108ebfb26b77b073921a7a832ad9.jpg"" width=""100%""><img class=""hidden-xs"" src=""https://cdn-stamplib.casetify.com/cms/image/b59acdafb10f496c1ef82268da2f24dc.jpg"" width=""100%""></section><style>section[data-block-index=""7""]{background-color:transparent;padding-top:0;padding-bottom:0}@media (max-width:767px){section[data-block-index=""7""]{padding-top:0;padding-bottom:0}}</style><section class=""cms-gutter-block"" data-block-index=""7"" data-block-name=""GUTTER_BLOCK_KXY943""><div class=""hidden-xs"" style=""height: 60px; background-color: transparent;""></div><div class=""visible-xs"" style=""height: 30px; background-color: transparent;""></div></section><style>
+    
+    section[data-block-index=""8""] {
+      background-color: transparent;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    @media (max-width: 767px) {
+      section[data-block-index=""8""] {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+    }
+    </style><section class=""cms-header-block"" data-block-index=""8"" data-block-name=""HEADER_BLOCK_YLL91T""><div class=""container""><div class=""col-sm-8 col-sm-offset-2 padding-left-sm-0 padding-right-sm-0 padding-left-xs-0 padding-right-xs-0""><h1 class=""text-center hidden-xs""></h1><h2 class=""visible-xs text-xs-center""></h2><h2 class=""text-center text-xs-center "">Personality Enters Reality</h2></div></div></section><style>
+    
+    section[data-block-index=""9""] {
+      background-color: transparent;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    @media (max-width: 767px) {
+      section[data-block-index=""9""] {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+    }
+    </style><section class=""cms-paragraph-block"" data-block-index=""9"" data-block-name=""PARAGRAPH_BLOCK_D1USVZ""><div class=""container""><div class=""padding-left-xs-0 padding-right-xs-0 col-sm-8 col-sm-offset-2 col-xs-12""><p class=""padding-left-xs-0 padding-right-xs-0 text-center text-xs-center"">While style and quality is at the core of everything we do, we want to bring you the latest accessories with the greatest care for our environment. That's why we're introducing the Monogram Case in biodegradable vegan leather and PU accents, so you can stay true to YOU and the planet. Shop the eco-friendly phone case now!</p></div></div></section><style>section[data-block-index=""10""]{background-color:transparent;padding-top:0;padding-bottom:0}@media (max-width:767px){section[data-block-index=""10""]{padding-top:0;padding-bottom:0}}</style><section class=""cms-gutter-block"" data-block-index=""10"" data-block-name=""GUTTER_BLOCK_1L6H6S""><div class=""hidden-xs"" style=""height: 60px; background-color: transparent;""></div><div class=""visible-xs"" style=""height: 30px; background-color: transparent;""></div></section><style>
+    
+    section[data-block-index=""11""] {
+      background-color: transparent;
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+    @media (max-width: 767px) {
+      section[data-block-index=""11""] {
+        padding-top: 0px;
+        padding-bottom: 0px;
+      }
+    }
+    </style><section class=""cms-image-block"" data-block-index=""11"" data-block-name=""IMAGE_BLOCK_MH614E""><img class=""visible-xs"" src=""https://cdn-stamplib.casetify.com/cms/image/0a30c27b6879b9cea2f72f94ef7d336e.jpg"" width=""100%""><img class=""hidden-xs"" src=""https://cdn-stamplib.casetify.com/cms/image/e56b6274d174f587d047bfc3d818b622.jpg"" width=""100%""></section><style>section[data-block-index=""12""]{background-color:transparent;padding-top:0;padding-bottom:0}@media (max-width:767px){section[data-block-index=""12""]{padding-top:0;padding-bottom:0}}</style><section class=""cms-gutter-block"" data-block-index=""12"" data-block-name=""GUTTER_BLOCK_1J5K74I""><div class=""hidden-xs"" style=""height: 60px; background-color: transparent;""></div><div class=""visible-xs"" style=""height: 30px; background-color: transparent;""></div></section><style>
+    
+    section[data-block-index=""13""] {
+      background-color: transparent;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    @media (max-width: 767px) {
+      section[data-block-index=""13""] {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+    }
+    </style><section class=""cms-header-block"" data-block-index=""13"" data-block-name=""HEADER_BLOCK_XRK1AP""><div class=""container""><div class=""col-sm-8 col-sm-offset-2 padding-left-sm-0 padding-right-sm-0 padding-left-xs-0 padding-right-xs-0""><h1 class=""text-center hidden-xs""></h1><h2 class=""visible-xs text-xs-center""></h2><h2 class=""text-center text-xs-center "">Custom Tailored to You</h2></div></div></section><style>
+    
+    section[data-block-index=""14""] {
+      background-color: transparent;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    @media (max-width: 767px) {
+      section[data-block-index=""14""] {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+    }
+    </style><section class=""cms-paragraph-block"" data-block-index=""14"" data-block-name=""PARAGRAPH_BLOCK_1ASJAFU""><div class=""container""><div class=""padding-left-xs-0 padding-right-xs-0 col-sm-8 col-sm-offset-2 col-xs-12""><p class=""padding-left-xs-0 padding-right-xs-0 text-center text-xs-center"">What does the CASETiFY Community and the Monogram Case have in common? Every individual making up the team is 100% unique! So don't limit yourself, or your creativity, and design your favorite vegan leather iPhone case right now.</p></div></div></section><style>section[data-block-index=""15""]{background-color:transparent;padding-top:0;padding-bottom:0}@media (max-width:767px){section[data-block-index=""15""]{padding-top:0;padding-bottom:0}}</style><section class=""cms-gutter-block"" data-block-index=""15"" data-block-name=""GUTTER_BLOCK_G6ZK07""><div class=""hidden-xs"" style=""height: 60px; background-color: transparent;""></div><div class=""visible-xs"" style=""height: 30px; background-color: transparent;""></div></section><style>section[data-block-index=""16""]{background-color:transparent;padding-top:0;padding-bottom:0}@media (max-width:767px){section[data-block-index=""16""]{padding-top:0;padding-bottom:0}}[data-block-name=HEADER_BLOCK_1DVGCL6] h2,[data-block-name=HEADER_BLOCK_1ME51MX] h2,[data-block-name=HEADER_BLOCK_2ZW10F] h2,[data-block-name=HEADER_BLOCK_K3YCMH] h2,[data-block-name=HEADER_BLOCK_RA5WUZ] h2{font-size:40px;letter-spacing:.2px;line-height:48px;font-weight:900;font-family:Pangram;color:#000}[data-block-name=PARAGRAPH_BLOCK_1207AL6] p,[data-block-name=PARAGRAPH_BLOCK_1IIUMPY] p,[data-block-name=PARAGRAPH_BLOCK_1LXMJ6K] p,[data-block-name=PARAGRAPH_BLOCK_1X7TYL6] p,[data-block-name=PARAGRAPH_BLOCK_MMYP5R] p{font-size:18px;letter-spacing:.2px;line-height:30px;font-weight:400;font-family:Buenos;color:#000}@media (max-width:767px){[data-block-name^=MOBILE_3] .slider-container{width:100%!important;padding-bottom:144%!important}}@media (max-width:767px){section[data-block-name=SLIDER_BLOCK_1ANYA74]{display:none!important}}@media (min-width:768px){section[data-block-name=VIDEO_BLOCK_L3X4O1]{display:none!important}}</style><section class=""cms-custom-block"" data-block-index=""16"" data-block-name=""CUSTOM_BLOCK_XTFTIX""></section></div>"
+Dusty Pink Loepard Phone Case,1,1,2,1,False,,
+Floral,1,1,2,2,False,,
+Magnolia Branch,1,1,2,1,False,,
+RAMEN BY POKETO,1,1,2,1,False,,
+Footprints,1,1,2,1,False,,
+Sun moon stars white galaxy,1,1,2,1,False,,
+Rainbow Cheetah by Megan Galante,1,1,2,1,False,,
+PP-0008,1,1,2,1,False,,
+Camo grey,1,1,2,1,False,,
+clouds,1,1,2,1,False,,
+Winter Tale Clear,1,1,2,1,False,,
+Waves Crashing,1,1,2,1,False,,
+Tiny Watercolor Dinos on transparent,1,1,2,1,False,,
+Gravity V2,1,1,2,1,False,,
+Black Transparent Leopard Print,1,1,2,1,False,,
+Red Roses (Transparent),1,1,2,1,False,,
+Dark Floral,1,1,2,1,False,,
+My Design -1,1,1,2,1,False,,
+STICKER FEST,1,1,2,1,False,,
+Spring Botanicals 2,1,1,2,1,False,,
+Sunflowers,1,1,2,1,False,,
+silver stars,1,1,2,1,False,,
+BLACK PORTRAITS BY BODIL JANE,1,1,2,1,False,,
+Purple Peony Watercolor Floral Bouquet,1,1,2,1,False,,
+Solar System2,1,1,2,1,False,,
+"Crystal ball on black background / mystical, magical, dreamy pattern",1,1,2,1,False,,
+Ill be there for you,1,1,2,1,False,,
+Candy Transparent,1,1,2,1,False,,
+Floral Collage,1,1,2,1,False,,
+Girl Boss,1,1,2,1,False,,
+Glitz + Glam,1,1,2,1,False,,
+peekaboo cat on rose gold,1,1,2,1,False,,
+My Secret Garden,1,1,2,1,False,,
+LEOPARDS BY BODIL JANE,1,1,2,1,False,,
+Healing black,1,1,2,1,False,,
+Cute White UFO Space Alien Drawing Pattern,1,1,2,1,False,,
+Gigi Garden Florals,1,1,2,1,False,,
+Stop and smell the roses,1,1,2,1,False,,
+Monstera iPhone and ipod,1,1,2,1,False,,
+LANA LAVENDER MIX,1,1,2,1,False,,

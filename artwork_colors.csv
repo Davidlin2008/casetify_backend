@@ -1,0 +1,19 @@
+artwork_color_name,artwork_color_info
+Jet Black,
+Light Pink,
+Navy Blue,
+Poppy Red,
+Sicilian Yellow,
+Chocolate Brown,
+Light Purple,
+Sage Green,
+Sky Blue,
+Stone Grey,
+Clear,#333
+Black,"radial-gradient(#fff 0%, #fff 48%, #000 52%, #000 100%)"
+Pink,"radial-gradient(#FF7 0%, #fff 48%, pink 52%, pink 100%) "
+Pink/Blue,https://cdn-stamplib.casetify.com/cms/image/9457634f344728ab9fec8735b52590a7.png
+Neon Yellow,#eaf850
+Iridescent,https://cdn-stamplib.casetify.com/cms/image/69c535ce7e3865cd4709a80874622d31.jpg
+Red,red
+Yellow,yellow
