@@ -17,15 +17,9 @@ class SignUpView(View):
 
         if len(data['password']) < 8:
             return JsonResponse({'message':'INVALID_PASSWORD'}, status=400)
-
-        if len(data['mobile_number']) != 11:
-            return JsonResponse({'message':'INVALID_PHONE_NUMBER'}, status=400)
-        
+       
         if User.objects.filter(email=data['email']).exists():
             return JsonResponse({'message':'DUPLICATE_EMAIL'}, status=401)
-                
-        if User.objects.filter(mobile_number=data['mobile_number']).exists():
-            return JsonResponse({'message':'DUPLICATE_MOBLIE_NUMBER'}, status=401)
         
         return None
 
