@@ -28,3 +28,4 @@ def login_decorator(func):
         return func(self, request, *args, **kwargs)
 
     return wrapper
+
