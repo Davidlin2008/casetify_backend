@@ -14,7 +14,7 @@ from django.core.mail.message   import EmailMessage
 from .models                    import Order, OrderStatus
 from user.models                import User
 from artwork.models             import CustomArtworkImage, RegularArtworkImage
-from user.utils                 import login_decorator, SmsService
+from user.utils                 import login_decorator
 
 from my_settings  import SMS_AUTH_ID, SMS_SERVICE_SECRET, SMS_FROM_NUMBER,SMS_URL
 

@@ -136,3 +136,35 @@ class MyShippingAddressEditView(View):
             return JsonResponse({"message":"INVALID_USER"}, status=400)
         except KeyError:
             return JsonResponse({'message':'INVALID_KEYS'}, status=400)
+
+
+class KakaologinView(View):
+    def post(self, request):
+        try:
+            kakao_token = request.headers["Authorization"]
+            print('kt',kakao_token)
+            headers = ({"Authorization": f"Bearer {kakao_token}"})
+            url = "https://kapi.kakao.com/v1/user/me"
+            response = requests.get(url, headers=headers)
+            print('kakao re',response.json)
+            kakao_user = response.json()
+            print(kakao_user)
+
+        except KeyError:
+            return JsonResponse({"message" : "INVALID_TOKEN"}, status = 400)
+        
+        if User.objects.filter(kakao_id=kakao_user["id"]).exists():
+            user_id = User.objects.get(kakao_id=kakao_user["id"]).id
+            print('user_id',user_id)
+            access_token = jwt.encode({'id':user_id}, SECRET_KEY, algorithm="HS256")
+            print('access_token', access_token)
+            return JsonResponse({"access_token" : access_token.decode('utf-8')}, status = 200)
+            
+        else:
+            newUser = User.objects.create(
+                kakao_id    = kakao_user["id"],
+                # email       = kakao_user["properties"]["account_email"], 
+                name        = kakao_user["properties"]["nickname"]
+            )
+            access_token = jwt.encode({'id': newUser.id}, SECRET_KEY, algorithm="HS256")
+            return JsonResponse({"access_token": access_token.decode('utf-8')}, status = 200)

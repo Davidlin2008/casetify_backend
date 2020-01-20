@@ -4,7 +4,8 @@ from .views import (
     SignInView, 
     MyprofileView, 
     MyprofileEditView, 
-    MyShippingAddressEditView
+    MyShippingAddressEditView,
+    KakaologinView
 )
 
 urlpatterns = [
@@ -13,4 +14,5 @@ urlpatterns = [
     path('/myprofile', MyprofileView.as_view()),
     path('/myprofile-edit', MyprofileEditView.as_view()),
     path('/myshippingaddress-edit', MyShippingAddressEditView.as_view()),
+    path('/kakaologin', KakaologinView.as_view()),
 ]
