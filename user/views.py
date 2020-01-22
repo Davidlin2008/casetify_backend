@@ -153,6 +153,8 @@ class KakaologinView(View):
 
         except KeyError:
             return JsonResponse({"message" : "INVALID_TOKEN"}, status = 400)
+        except kakao_token.DoesNotExist:
+            return JsonResponse({'message':'INVALID_TOKEN'}, status=400)
         
         if User.objects.filter(kakao_id=kakao_user["id"]).exists():
             user_id = User.objects.get(kakao_id=kakao_user["id"]).id
@@ -164,7 +166,7 @@ class KakaologinView(View):
         else:
             newUser = User.objects.create(
                 kakao_id    = kakao_user["id"],
-                # email       = kakao_user["properties"]["account_email"], 
+                email       = kakao_user["kaccount_email"], 
                 name        = kakao_user["properties"]["nickname"]
             )
             access_token = jwt.encode({'id': newUser.id}, SECRET_KEY, algorithm="HS256")
