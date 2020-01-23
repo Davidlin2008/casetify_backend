@@ -134,17 +134,15 @@ class OrderCheckoutView(View):
         user = User.objects.get(id=request.user.id)
 
         try:
-            User.objects.update(
-                mobile_number   = data['mobile_number'],
-                first_name      = data['first_name'],
-                last_name       = data['last_name'],
-                address         = data['address'],
-                zipcode         = data['zipcode']
-            )
+            user.mobile_number   = data['mobile_number']
+            user.first_name      = data['first_name']
+            user.last_name       = data['last_name']
+            user.address         = data['address']
+            user.zipcode         = data['zipcode']
+            user.save()
 
             for id in data['id']:
                 Order.objects.filter(id=id).update(order_status_id = data['order_status_id'])
-            
             
             self.email(data, user)
             self.sms_service(data, user)
@@ -158,7 +156,6 @@ class OrderCheckoutView(View):
     def email(self, data, user):
         for id in data['id']:
             info = Order.objects.select_related('user','artwork').get(id=id)
-
         if len(data['id']) >1:
             subject = 'CASETIFY-PROJECT'
             message = f"""{user.last_name}{user.first_name}님 {info.artwork.name}외 상품 결제완료되었습니다. \n감사합니다 :)"""
@@ -175,8 +172,6 @@ class OrderCheckoutView(View):
         mobile_number = info.user.mobile_number
         name = info.user.name
         address = info.user.address
-
-        print('mobile_number',mobile_number)
         headers = {
         'Content-Type': 'application/json; charset=utf-8',
         'x-ncp-auth-key': f'{SMS_AUTH_ID}',

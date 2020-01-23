@@ -97,9 +97,9 @@ class MyprofileEditView(View):
     @login_decorator
     def post(self,request):
         data = json.loads(request.body)
-
+        user = User.objects.get(id=request.user.id)
         try:    
-            user = User.objects.get(id=request.user.id)
+            
             user.name            = data['name']
             user.email           = data['email']
             user.introduction    = data['bio']
@@ -120,10 +120,9 @@ class MyShippingAddressEditView(View):
     @login_decorator
     def post(self,request):
         data = json.loads(request.body)
-        
+        user = User.objects.get(id=request.user.id)
         try:
-            user = User.objects.get(id=request.user.id)
-
+            
             user.first_name     = data['first_name']
             user.last_name      = data['last_name']
             user.address        = data['address']
