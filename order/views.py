@@ -157,14 +157,15 @@ class OrderCheckoutView(View):
 
     def email(self, data, user):
         for id in data['id']:
-            info = Order.objects.select_related('user','artwork').get(id=id)       
+            info = Order.objects.select_related('user','artwork').get(id=id)
+
         if len(data['id']) >1:
             subject = 'CASETIFY-PROJECT'
-            message = f"""{info.user.name}님 {info.artwork.name}외 상품 결제완료되었습니다. \n감사합니다 :)"""
+            message = f"""{user.last_name}{user.first_name}님 {info.artwork.name}외 상품 결제완료되었습니다. \n감사합니다 :)"""
             email   = EmailMessage(subject=subject, body=message, to = [user.email])
         else:
             subject = 'CASETIFY-PROJECT'
-            message = f"""{info.user.name}님 {info.artwork.name}상품 결제완료되었습니다. \n감사합니다 :)"""
+            message = f"""{user.last_name}{user.first_name}님 {info.artwork.name}상품 결제완료되었습니다. \n감사합니다 :)"""
             email   = EmailMessage(subject=subject, body=message, to = [user.email])
         email.send()
 
@@ -188,6 +189,6 @@ class OrderCheckoutView(View):
             'from':f"""{SMS_FROM_NUMBER}""",
             'to':[f"""{mobile_number}"""],
             'subject':'CASETIFY-PROJECT',
-            'content':f"""{name}님! {info.artwork.name}상품 결제가 완료되었습니다. \n감사합니다 :)"""
+            'content':f"""{user.last_name}{user.first_name}님! {info.artwork.name}상품 결제가 완료되었습니다. \n감사합니다 :)"""
         }
         requests.post(SMS_URL, headers=headers, json=data)
