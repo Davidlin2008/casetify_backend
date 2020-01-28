@@ -20,6 +20,7 @@
 - Sign-up and Sign-in features (Used Bcrypt for user password hashing)
 - Kakao integrated login
 - Selected options such as artwork(casemodel) cellphone-models, colors, casemodels are stored in MySQL database
+- User profile, cart, order view modeling and features
 - User orders SMS Notification with NAVER SENS and Django Gmail
 - Deploy as AWS EC2 and Docker
 
